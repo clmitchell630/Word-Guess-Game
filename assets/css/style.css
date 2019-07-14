@@ -1,4 +1,18 @@
 /*Whole document*/
 .background {
-    background-color: black;
+    background-image: url("../images/black_lozenge.png");
+}
+.logoEdit {
+    width: 512px;
+}
+
+h1 {
+    font-family: 'Permanent Marker', serif;
+    color: #ff9c00;
+}
+.gameBoard {
+    border: 1px solid #ff9c00;
+    width: 100%;
+    height: 600px;
+    background-color: #202020;
 }

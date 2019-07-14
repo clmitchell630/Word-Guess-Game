@@ -46,10 +46,10 @@
             </p>
 
             <!--Game in Progress-->
-            <div id="inProgress">
+            <div id="inProgress" style="display:none;">
                 <!--Win/Loss counter-->
                 <p class="fontStyle winStyle" style="margin-top: 25px;">
-                    Wins: <span id="winCounter">0</span>
+                    Win: <span id="winCounter">0</span>
                 </p>
                 <p class="fontStyle winStyle">
                     Loss: <span id="lossCounter">0</span>
@@ -80,6 +80,30 @@
                     </p>
 
                 </div>
+            </div>
+
+            <!--Win-->
+            <div id="gameWin" class="fontStyle enterStart">
+                <span id="imgWin"></span>
+                <span id="champName"></span>
+                <h2>
+                    Winner!
+                </h2>
+                <p class="gameRestart">
+                    Press "Space" to play again!
+                </p>
+            </div>
+
+            <!--Lose-->
+            <div class="gameWin fontStyle enterStart">
+                <span id="imgWin"></span>
+                <span id="champName"></span>
+                <h2 class="fontStyle">
+                    You Lose
+                </h2>
+                <p class="gameRestart">
+                    Press "Space" to play again!
+                </p>
             </div>
 
         </div>

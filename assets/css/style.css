@@ -31,7 +31,17 @@ h1 {
     margin: 0;
     line-height: 1.1;
 }
-
+.inStyle {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.1;
+}
+.pickLetter{
+    height: 2em;
+    border: 1px solid #464646;
+    padding: 5px;
+}
 /*media queries*/
 @media screen and (max-width: 980px) {
     .gameBoard {

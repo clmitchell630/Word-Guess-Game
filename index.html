@@ -27,27 +27,42 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="text-align: center;">
-                    <img src="assets/images/lol-logo.png" alt="league of legends logo" 
-                        class="logoEdit">
+                    <img src="assets/images/lol-logo.png" alt="league of legends logo" class="logoEdit">
                     <h1>Champ Select!</h1>
                 </div>
             </div>
         </div>
 
     </header>
-    
+
 
     <section class="container gameBoard" style="margin-top: 50px;">
 
         <div class="col-md-12">
-            <p id="gameStart" class="fontStyle enterStart">
+
+            <!--Game Start!-->
+            <p id="gameStart" class="fontStyle enterStart" style="display:none;">
                 Press "Enter" to begin!
             </p>
-        </div>
+            <div id="inProgress">
+                <!--Win/Loss counter-->
+                <p class="fontStyle winStyle" style="margin-top: 25px;">
+                    Wins: <span id="winCounter">0</span>
+                </p>
+                <p class="fontStyle winStyle">
+                    Loss: <span id="lossCounter">0</span>
+                </p>
 
+                <!--Game Text Interactive-->
+                <p class="fontStyle inStyle">
+
+                </p>
+            </div>
+        </div>
     </section>
 
-    <footer style="margin-top: 50px;"></footer>
+    <footer style="margin-top: 50px;">
+    </footer>
 
 </body>
 

@@ -25,3 +25,8 @@ h1 {
     text-align: center;
     margin-top: 25%;
 }
+.winStyle {
+    text-align: right;
+    margin: 0;
+    line-height: 1.1;
+}

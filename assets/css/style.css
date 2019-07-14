@@ -12,7 +12,8 @@ h1 {
 }
 .gameBoard {
     border: 1px solid #ff9c00;
-    width: 100%;
+    margin: 0 auto;
+    width: 50%;
     height: 600px;
     background-color: #202020;
 }
@@ -29,4 +30,11 @@ h1 {
     text-align: right;
     margin: 0;
     line-height: 1.1;
+}
+
+/*media queries*/
+@media screen and (max-width: 980px) {
+    .gameBoard {
+        width: 100%;
+    }
 }

@@ -44,6 +44,8 @@
             <p id="gameStart" class="fontStyle enterStart" style="display:none;">
                 Press "Enter" to begin!
             </p>
+
+            <!--Game in Progress-->
             <div id="inProgress">
                 <!--Win/Loss counter-->
                 <p class="fontStyle winStyle" style="margin-top: 25px;">
@@ -53,12 +55,31 @@
                     Loss: <span id="lossCounter">0</span>
                 </p>
 
+                <p class="fontStyle inStyle">
+                    Champion Name
+                </p>
+
                 <!--Game Text Interactive-->
                 <p class="fontStyle inStyle">
+                    <span id="mysteryPick"></span>
+                </p>
+                <p class="fontStyle inStyle">
+                    Number of Guesses Remaining
+                </p>
+                <p class="fontStyle inStyle">
+                    <span id="guessRemain">10</span>
+                </p>
 
+                <p class="fontStyle inStyle">
+                    Letters Already Guessed
+                </p>
+                <p class="fontStyle inStyle">
+                    <span id="guessChar"></span>
                 </p>
             </div>
+
         </div>
+
     </section>
 
     <footer style="margin-top: 50px;">

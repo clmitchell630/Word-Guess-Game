@@ -8,7 +8,7 @@
 
 h1 {
     font-family: 'Permanent Marker', serif;
-    color: #ff9c00;
+    color: #c9aa71;
 }
 .gameBoard {
     border: 1px solid #ff9c00;
@@ -40,7 +40,8 @@ h1 {
 .pickLetter{
     height: 2em;
     border: 1px solid #464646;
-    padding: 5px;
+    padding: 10px;
+    color: #257372;
 }
 /*media queries*/
 @media screen and (max-width: 980px) {

@@ -24,8 +24,8 @@ After the user wins/loses the game should automatically choose another word and 
 
 ## "Press 'Enter' to begin!"
 
--   on 'keyup' event, the game will begin.
--   event will also cause the game to appear in the DOM.
+>   on 'keyup' event, the game will begin.
+>   event will also cause the game to appear in the DOM.
 
 ## Display 
     

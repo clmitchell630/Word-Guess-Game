@@ -14,9 +14,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--css stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css">
-
-
-
+    <!--javascript link-->
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
 
 </head>
 
@@ -41,12 +40,12 @@
         <div class="col-md-12">
 
             <!--Game Start!-->
-            <p id="gameStart" class="fontStyle enterStart" style="display:none;">
+            <p id="gameStart" class="fontStyle enterStart">
                 Press "Enter" to begin!
             </p>
 
             <!--Game in Progress-->
-            <div id="inProgress" style="display:none;">
+            <div id="inProgress">
                 <!--Win/Loss counter-->
                 <p class="fontStyle winStyle" style="margin-top: 25px;">
                     Win: <span id="winCounter">0</span>
@@ -85,7 +84,7 @@
             <!--Win-->
             <div id="gameWin" class="fontStyle enterStart">
                 <span id="imgWin"></span>
-                <span id="champName"></span>
+                <span class="champName"></span>
                 <h2>
                     Winner!
                 </h2>
@@ -95,9 +94,9 @@
             </div>
 
             <!--Lose-->
-            <div class="gameWin fontStyle enterStart">
-                <span id="imgWin"></span>
-                <span id="champName"></span>
+            <div id="gameLoss" class="fontStyle enterStart">
+                <span id="imgLoss"></span>
+                <span class="champName"></span>
                 <h2 class="fontStyle">
                     You Lose
                 </h2>

@@ -45,30 +45,43 @@ var randomChamp;
 var blankString = "";
 var gameStarted = false;
 var wrongString = "";
+var rightString = "";
+
 document.addEventListener('DOMContentLoaded', function () {
 
-    //initialization AKA game start and everything else....
+    //initialization
     document.getElementById("inProgress").style.display = "none";
     document.getElementById("gameWin").style.display = "none";
     document.getElementById("gameLoss").style.display = "none";
+    document.getElementById("winCounter").innerHTML = wins;
+    document.getElementById("lossCounter").innerHTML = loss;
+
 
     window.addEventListener("keyup", function (event) {
+        this.console.log(event.key);
+
         var userInput = event.key.toLowerCase();
 
-        if (userInput === "enter") {
+        if (gameStarted === false && userInput === "enter") {
             event.preventDefault();
             document.getElementById("gameStart").style.display = "none";
             document.getElementById("inProgress").style.display = "block";
 
-            if (gameStarted === false) {
-                pickChamp();
-                gameStarted = true;
-            }
+            guesses = 10;
+            this.document.getElementById("guessRemain").innerHTML = guesses;
+
+            wrongString = "";
+            document.getElementById("guessChar").innerHTML = wrongString;
+
+            pickChamp();
+            gameStarted = true;
+            document.getElementById("gameWin").style.display = "none";
+            document.getElementById("gameLoss").style.display = "none";
 
         }
-        if (event.keyCode >= 65 && event.keyCode <= 90) {
+        if (event.keyCode >= 65 && event.keyCode <= 90 && gameStarted === true) {
             //event.keyCode is a letter
-            //this.console.log("event keycode is " + event.keyCode);
+            this.console.log("event keycode is " + event.keyCode);
             var index = randomChamp.toLowerCase().indexOf(userInput);
             if (index > -1) {
                 //input exists in randomChamp
@@ -79,21 +92,38 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById("mysteryPick").innerHTML = blankString;
                     index = randomChamp.toLowerCase().indexOf(userInput);
                 }
+                this.console.log("randomChamp = " + randomChamp);
+
+                if (rightString.indexOf(userInput) === -1) {
+                    rightString = rightString + userInput;
+                    this.console.log("rightString = " + rightString);
+                }
+                
             }
-            else {
+
+            else if (rightString.indexOf(userInput) === -1) {
                 //input does not exit in randomChamp
                 if (wrongString.indexOf(userInput) === -1) {
                     wrongString = wrongString + userInput;
                     document.getElementById("guessChar").innerHTML = wrongString;
                 }
+
                 guesses = 10 - wrongString.length;
                 this.document.getElementById("guessRemain").innerHTML = guesses;
-                if(guesses <= 0) {
+
+                this.console.log("wrongString = " + wrongString);
+
+                
+                if (guesses <= 0) {
+                    //this block exicutes if you lose
                     loss = loss + 1;
                     this.document.getElementById("lossCounter").innerHTML = loss;
 
                     this.document.getElementById("inProgress").style.display = "none";
                     this.document.getElementById("gameLoss").style.display = "block";
+
+
+                    gameStarted = false;
                 }
             }
 
@@ -106,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function pickChamp() {
         randomChamp = champList[Math.floor(Math.random() * champList.length)];
         this.console.log(randomChamp);
-
+        blankString = "";
 
         for (var i = 0; i < randomChamp.length; i++) {
             blankString = blankString + "_";

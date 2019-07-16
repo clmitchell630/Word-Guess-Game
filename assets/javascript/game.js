@@ -42,6 +42,8 @@ var wins = 0;
 var loss = 0;
 var guesses = 10;
 var randomChamp;
+var blankString = "";
+var gameStarted = false;
 document.addEventListener('DOMContentLoaded', function () {
 
     //initialization AKA game start and everything else....
@@ -56,16 +58,26 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             document.getElementById("gameStart").style.display = "none";
             document.getElementById("inProgress").style.display = "block";
-            pickChamp();
+
+            if (gameStarted === false) {
+                pickChamp();
+                gameStarted = true;
+            }
+
         }
-       
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             //event.keyCode is a letter
-            this.console.log("event keycode is " + event.keyCode);
+            //this.console.log("event keycode is " + event.keyCode);
             var index = randomChamp.toLowerCase().indexOf(userInput);
             if (index > -1) {
                 //input exists in randomchamp
-                console.log("letter at " + index + " is " + randomChamp[index]);
+                //console.log("letter at " + index + " is " + randomChamp[index]);
+                while (index > -1) {
+                    randomChamp = randomChamp.replace(new RegExp(userInput, "i"), "_");
+                    blankString = blankString.substring(0, index) + userInput + blankString.substring(index + 1);
+                    document.getElementById("mysteryPick").innerHTML = blankString;
+                    index = randomChamp.toLowerCase().indexOf(userInput);
+                }
             }
             else {
 
@@ -81,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
         randomChamp = champList[Math.floor(Math.random() * champList.length)];
         this.console.log(randomChamp);
 
-        var blankString = "";
+
         for (var i = 0; i < randomChamp.length; i++) {
-            blankString = blankString + "_ ";
+            blankString = blankString + "_";
         }
 
         document.getElementById("mysteryPick").innerHTML = blankString;

@@ -42,6 +42,7 @@ h1 {
     border: 1px solid #464646;
     padding: 10px;
     color: #257372;
+    letter-spacing: 1em;
 }
 /*media queries*/
 @media screen and (max-width: 980px) {

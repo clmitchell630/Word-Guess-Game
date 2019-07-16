@@ -54,13 +54,23 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             document.getElementById("gameStart").style.display = "none";
             document.getElementById("inProgress").style.display = "block";
+            pickChamp();
         }
-
-        var champSelect = champList[Math.floor(Math.random() * champList.length)];
         
     });
 
+    function pickChamp() {
+        var champSelect = champList[Math.floor(Math.random() * champList.length)];
+        this.console.log(champSelect);
 
+        var blankString = "";
+        for (var i = 0; i < champSelect.length; i++) {
+            blankString = blankString + "_ ";
+        }
+
+        document.getElementById("mysteryPick").innerHTML = blankString;
+    }
+    
 
 
 

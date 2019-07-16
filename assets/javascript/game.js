@@ -44,6 +44,7 @@ var guesses = 10;
 var randomChamp;
 var blankString = "";
 var gameStarted = false;
+var wrongString = "";
 document.addEventListener('DOMContentLoaded', function () {
 
     //initialization AKA game start and everything else....
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //this.console.log("event keycode is " + event.keyCode);
             var index = randomChamp.toLowerCase().indexOf(userInput);
             if (index > -1) {
-                //input exists in randomchamp
+                //input exists in randomChamp
                 //console.log("letter at " + index + " is " + randomChamp[index]);
                 while (index > -1) {
                     randomChamp = randomChamp.replace(new RegExp(userInput, "i"), "_");
@@ -80,12 +81,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             else {
+                //input does not exit in randomChamp
+                if (wrongString.indexOf(userInput) === -1) {
+                    wrongString = wrongString + userInput;
+                    document.getElementById("guessChar").innerHTML = wrongString;
+                }
+                guesses = 10 - wrongString.length;
+                this.document.getElementById("guessRemain").innerHTML = guesses;
+                if(guesses <= 0) {
+                    loss = loss + 1;
+                    this.document.getElementById("lossCounter").innerHTML = loss;
 
+                    this.document.getElementById("inProgress").style.display = "none";
+                    this.document.getElementById("gameLoss").style.display = "block";
+                }
             }
 
         }
 
-        this.console.log(event.keyCode + " " + userInput);
+        //this.console.log(event.keyCode + " " + userInput);
 
     });
 

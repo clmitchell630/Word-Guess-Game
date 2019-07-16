@@ -33,12 +33,12 @@ After the user wins/loses the game should automatically choose another word and 
     -   WINS:   
         *   number of wins will increase with every successfull completetion of a word.
     -   LETTER FIELD:
-        *   will populate with successfully guessed letters.
-        *   will start as _ , will turn into a letter if successfully guessed.
+        >   will populate with successfully guessed letters.
+        >   will start as _ , will turn into a letter if successfully guessed.
     -   GUESSES:
-        *   will display guessed amount of guesses remaining, with a max of 10.
+        >   will display guessed amount of guesses remaining, with a max of 10.
         *   will decrease with each incorrect guess.
-        *   will not decrease if letter was already guessed.
+        >   will not decrease if letter was already guessed.
             -   for both successful AND unsuccessful.
     -   DISPLAYED LETTER:
         *   will display letters unsuccessfully guessed.

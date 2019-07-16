@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     window.addEventListener("keyup", function (event) {
-        this.console.log(event.key);
+        //this.console.log(event.key);
 
         var userInput = event.key.toLowerCase();
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         if (event.keyCode >= 65 && event.keyCode <= 90 && gameStarted === true) {
             //event.keyCode is a letter
-            this.console.log("event keycode is " + event.keyCode);
+            //this.console.log("event keycode is " + event.keyCode);
             var index = randomChamp.toLowerCase().indexOf(userInput);
             if (index > -1) {
                 //input exists in randomChamp
@@ -95,11 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById("mysteryPick").innerHTML = blankString;
                     index = randomChamp.toLowerCase().indexOf(userInput);
                 }
-                this.console.log("randomChamp = " + randomChamp);
+                //this.console.log("randomChamp = " + randomChamp);
 
                 if (rightString.indexOf(userInput) === -1) {
                     rightString = rightString + userInput;
-                    this.console.log("rightString = " + rightString);
+                    //this.console.log("rightString = " + rightString);
                 }
 
                 var isEmpty = true;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 guesses = 10 - wrongString.length;
                 this.document.getElementById("guessRemain").innerHTML = guesses;
 
-                this.console.log("wrongString = " + wrongString);
+               //this.console.log("wrongString = " + wrongString);
 
 
                 if (guesses <= 0) {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function pickChamp() {
         randomChamp = champList[Math.floor(Math.random() * champList.length)];
         imgChamp = randomChamp;
-        this.console.log(randomChamp);
+        //this.console.log(randomChamp);
         blankString = "";
 
         for (var i = 0; i < randomChamp.length; i++) {

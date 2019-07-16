@@ -119,7 +119,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     
                     this.document.getElementById("inProgress").style.display = "none";
                     this.document.getElementById("gameWin").style.display = "block";
-                    this.document.getElementById("imgWin").src = "./assets/images/lolchamps/" + imgChamp + ".png"
+                    this.document.getElementById("gameWin").getElementsByClassName("champName")[0].innerHTML = imgChamp;
+                    this.document.getElementById("imgWin").src = "./assets/images/lolchamps/" + imgChamp + ".png";
+                    this.document.getElementById("imgWin").alt = imgChamp;
 
                     gameStarted = false;
 
@@ -147,6 +149,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     this.document.getElementById("inProgress").style.display = "none";
                     this.document.getElementById("gameLoss").style.display = "block";
+
+                    this.document.getElementById("gameLoss").getElementsByClassName("champName")[0].innerHTML = imgChamp;
+                    this.document.getElementById("imgLoss").src = "./assets/images/lolchamps/" + imgChamp + ".png";
+                    this.document.getElementById("imgLoss").alt = imgChamp;
 
 
                     gameStarted = false;

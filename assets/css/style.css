@@ -14,7 +14,7 @@ h1 {
     border: 1px solid #ff9c00;
     margin: 0 auto;
     width: 50%;
-    height: 600px;
+    min-height: 400px;
     background-color: #202020;
 }
 .fontStyle {
@@ -24,7 +24,7 @@ h1 {
 .enterStart {
     font-size: 32px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .winStyle {
     text-align: right;
@@ -32,7 +32,7 @@ h1 {
     line-height: 1.1;
 }
 .inStyle {
-    margin-top: 100px;
+    margin-top: 20px;
     text-align: center;
     font-size: 24px;
     line-height: 1.1;
@@ -44,9 +44,16 @@ h1 {
     color: #257372;
     letter-spacing: 0.3em;
 }
-#imgWin {
+#imgWin, #imgLoss {
     margin-bottom: 30px;
 }
+.outcome {
+    width: 250px;
+}
+.champName {
+    color:  #a87015;
+}
+
 /*media queries*/
 @media screen and (max-width: 980px) {
     .gameBoard {

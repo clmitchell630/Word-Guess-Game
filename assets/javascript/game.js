@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             wrongString = "";
             document.getElementById("guessChar").innerHTML = wrongString;
+            
+            rightString = "";
 
             pickChamp();
             gameStarted = true;
@@ -98,7 +100,29 @@ document.addEventListener('DOMContentLoaded', function () {
                     rightString = rightString + userInput;
                     this.console.log("rightString = " + rightString);
                 }
-                
+
+                var isEmpty = true;
+
+                for (var j = 0; j < randomChamp.length; j++) {
+                    //this block checks for win condition
+                    if (randomChamp.toLowerCase().charAt(j) !== "_") {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+
+                if(isEmpty) {
+                    //this block executes if you win
+                    wins = wins + 1;
+                    this.document.getElementById("winCounter").innerHTML = wins;
+
+                    this.document.getElementById("inProgress").style.display = "none";
+                    this.document.getElementById("gameWin").style.display = "block";
+
+                    gameStarted = false;
+
+                }
+
             }
 
             else if (rightString.indexOf(userInput) === -1) {
@@ -113,9 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 this.console.log("wrongString = " + wrongString);
 
-                
+
                 if (guesses <= 0) {
-                    //this block exicutes if you lose
+                    //this block executes if you lose
                     loss = loss + 1;
                     this.document.getElementById("lossCounter").innerHTML = loss;
 
@@ -144,12 +168,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById("mysteryPick").innerHTML = blankString;
     }
-
-
-
-
-
-
-
 
 });

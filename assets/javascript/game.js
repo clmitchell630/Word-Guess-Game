@@ -46,6 +46,7 @@ var blankString = "";
 var gameStarted = false;
 var wrongString = "";
 var rightString = "";
+var imgChamp;
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -115,9 +116,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     //this block executes if you win
                     wins = wins + 1;
                     this.document.getElementById("winCounter").innerHTML = wins;
-
+                                    
                     this.document.getElementById("inProgress").style.display = "none";
                     this.document.getElementById("gameWin").style.display = "block";
+                    this.document.getElementById("imgWin").src = "./assets/images/lolchamps/" + imgChamp + ".png"
 
                     gameStarted = false;
 
@@ -159,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function pickChamp() {
         randomChamp = champList[Math.floor(Math.random() * champList.length)];
+        imgChamp = randomChamp;
         this.console.log(randomChamp);
         blankString = "";
 
